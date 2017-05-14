@@ -13,12 +13,12 @@ try {
   // Ensure that the payment was paid
 ) {
   // Process a paid payment.
-  $myfile = fopen("payment_info.html", "w") or die("Unable to open file!");
-  echo fwrite($myfile,"Payment id: ".$resource->id."\n");
-  echo fwrite($myfile,"Payment object: ".$resource->object."\n");
-  echo fwrite($myfile,"Payment amount in cents: ".$resource->amount."\n");
-  echo fwrite($myfile,"Payment creation: ".$resource->created_at."\n");
-  echo fwrite($myfile,"Card last 4 digits: ".$resource->card);
+  $myfile = fopen("payment_info.txt", "w") or die("Unable to open file!");
+  fwrite($myfile,"Payment id: ".$resource->id."\n");
+  fwrite($myfile,"Payment object: ".$resource->object."\n");
+  fwrite($myfile,"Payment amount in cents: ".$resource->amount."\n");
+  fwrite($myfile,"Payment creation: ".$resource->created_at."\n");
+  fwrite($myfile,"Card last 4 digits: ".$resource->card->last4);
   fclose($myfile);
 
 
@@ -27,7 +27,7 @@ try {
   // Process the refund.
   $myfile2 = fopen("handling_errors.txt", "w") or die("Unable to open file!");
   $txt2 = "I deserve a refund\n";
-  echo fwrite($myfile2, $txt2);
+  fwrite($myfile2, $txt2);
   fclose($myfile2);
 }
 }
