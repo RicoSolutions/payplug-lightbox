@@ -1,7 +1,8 @@
 # payplug-lightbox
-Integrating PayPlug Lightbox in real life
+
 
 A real life example of PayPlug lightbox usage.
+
 
 Use the lightbox:
 https://lightbox.rico.solutions
