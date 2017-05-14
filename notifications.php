@@ -10,7 +10,7 @@ try {
 
   if ($resource instanceof \Payplug\Resource\Payment
   && $resource->is_paid
-  // Ensure that the payment was paid
+  // Ensure that the payment was paid.
 ) {
   // Process a paid payment.
   $myfile = fopen("payment_info.txt", "w") or die("Unable to open file!");
