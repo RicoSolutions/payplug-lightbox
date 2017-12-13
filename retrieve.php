@@ -12,6 +12,8 @@ $payment_id = \Payplug\Payment::retrieve($paymentid);
 $payment = $payment_id->id;
 $amount = $payment_id->amount / 100;
 $currency = $payment_id->currency;
+$failure_code = $payment_id->failure->code;
+$failure_message = $payment_id->failure->message;
 $is_paid = $payment_id->is_paid;
 $is_refunded = $payment_id->is_refunded;
 
@@ -39,6 +41,8 @@ $is_refunded = $payment_id->is_refunded;
         <th>Payment</th>
         <th>Amount</th>
         <th>Currency</th>
+        <th>Failure code</th>
+        <th>Failure reason</th>
         <th>Is Paid</th>
         <th>Is Refunded</th>
 
@@ -50,6 +54,8 @@ $is_refunded = $payment_id->is_refunded;
         <td><?php echo $payment; ?></td>
         <td><?php echo $amount; ?></td>
         <td><?php echo $currency; ?></td>
+        <td><?php echo $failure_code; ?></td>
+        <td><?php echo $failure_message; ?></td>
         <td><?php echo $is_paid; ?></td>
         <td><?php echo $is_refunded; ?></td>
 
